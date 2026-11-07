@@ -1,0 +1,98 @@
+{
+  "checkedAt": "2026-11-07T05:50:58.495Z",
+  "networkBridge": false,
+  "note": "Production export at /preview/. Wallet tests use an explicitly named test provider and generated in-memory accounts; no real MetaMask approval or Coinbase passkey ceremony was attempted. Shared-service tests use isolated SQLite and a fixed test registration frontier, not seeded production profiles.",
+  "remoteFailures": [
+    "api.squeekchain.com: net::ERR_EMPTY_RESPONSE",
+    "cca-lite.coinbase.com: net::ERR_ABORTED",
+    "cca-lite.coinbase.com: net::ERR_EMPTY_RESPONSE",
+    "api.squeekchain.com: net::ERR_FAILED"
+  ],
+  "results": [
+    {
+      "name": "Production export renders at a gateway subpath with its own fonts and assets",
+      "passed": true
+    },
+    {
+      "name": "Feed spends one seed, increases fullness and XP, and survives reload",
+      "passed": true
+    },
+    {
+      "name": "Pet, clean, sleep and wake controls perform actual care actions",
+      "passed": true
+    },
+    {
+      "name": "Seed-catching game is playable with pointer and keyboard, and pays only collected seeds",
+      "passed": true
+    },
+    {
+      "name": "Daily mission reward becomes collectible and cannot be collected twice",
+      "passed": true
+    },
+    {
+      "name": "Evolution, activity, achievements and leaderboard sections are functional",
+      "passed": true
+    },
+    {
+      "name": "Wallet dialog offers installed-browser and Coinbase paths, closes with Escape and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Rename form reports invalid input inside the dialog and persists a valid name",
+      "passed": true
+    },
+    {
+      "name": "Invalid transaction hash is rejected before any chain request, and future appearances stay locked",
+      "passed": true
+    },
+    {
+      "name": "All six sections reflow without page overflow at 320, 390, 768 and 1440 pixels",
+      "passed": true
+    },
+    {
+      "name": "Unavailable official APIs leave care usable and never display missing readings as zero",
+      "passed": true
+    },
+    {
+      "name": "Reduced-motion preference stops nonessential hamster animation",
+      "passed": true
+    },
+    {
+      "name": "Mobile wallet picker offers MetaMask, Coinbase, Rabby, Phantom and Smart Wallet without a relay",
+      "passed": true
+    },
+    {
+      "name": "A mobile wallet browser with a generic injected provider can connect without a deep-link loop",
+      "passed": true
+    },
+    {
+      "name": "EIP-6963 named wallet connects; wrong network is detected and switches to Sepolia",
+      "passed": true
+    },
+    {
+      "name": "Wallet message signing creates a service profile; shared leaderboard shows that real test signature",
+      "passed": true
+    },
+    {
+      "name": "Two browser profiles share persistent global rankings; another device restores the same wallet",
+      "passed": true
+    },
+    {
+      "name": "Shared cloud save travels between independent browser contexts",
+      "passed": true
+    },
+    {
+      "name": "Disconnect returns to the guest save and clears ownership",
+      "passed": true
+    },
+    {
+      "name": "WebKit renders the exported game and performs the primary feed interaction",
+      "passed": false,
+      "details": "browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ Missing libraries:                                   ║\n║     libgtk-4.so.1                                    ║\n║     libpangocairo-1.0.so.0                           ║\n║     libgdk_pixbuf-2.0.so.0                           ║\n║     libcairo-gobject.so.2                            ║\n║     libgraphene-1.0.so.0                             ║\n║     liblcms2.so.2                                    ║\n║     libwoff2dec.so.1.0.2                             ║\n║     libvpx.so.9                                      ║\n║     libevent-2.1.so.7                                ║\n║     libopus.so.0                                     ║\n║     libgstallocators-1.0.so.0                        ║\n║     libgstapp-1.0.so.0                               ║\n║     libgstpbutils-1.0.so.0                           ║\n║     libgstaudio-1.0.so.0                             ║\n║     libgsttag-1.0.so.0                               ║\n║     libgstvideo-1.0.so.0                             ║\n║     libgstgl-1.0.so.0                                ║\n║     libgstcodecparsers-1.0.so.0                      ║\n║     libgstfft-1.0.so.0                               ║\n║     libflite.so.1                                    ║\n║     libflite_usenglish.so.1                          ║\n║     libflite_cmu_grapheme_lang.so.1                  ║\n║     libflite_cmu_grapheme_lex.so.1                   ║\n║     libflite_cmu_indic_lang.so.1                     ║\n║     libflite_cmu_indic_lex.so.1                      ║\n║     libflite_cmulex.so.1                             ║\n║     libflite_cmu_time_awb.so.1                       ║\n║     libflite_cmu_us_awb.so.1                         ║\n║     libflite_cmu_us_kal16.so.1                       ║\n║     libflite_cmu_us_kal.so.1                         ║\n║     libflite_cmu_us_rms.so.1                         ║\n║     libflite_cmu_us_slt.so.1                         ║\n║     libwebpdemux.so.2                                ║\n║     libavif.so.16                                    ║\n║     libharfbuzz-icu.so.0                             ║\n║     libepoxy.so.0                                    ║\n║     libwebpmux.so.3                                  ║\n║     libenchant-2.so.2                                ║\n║     libsecret-1.so.0                                 ║\n║     libhyphen.so.0                                   ║\n║     libwayland-server.so.0                           ║\n║     libwayland-egl.so.1                              ║\n║     libmanette-0.2.so.0                              ║\n║     libx264.so                                       ║\n╚══════════════════════════════════════════════════════╝"
+    },
+    {
+      "name": "No uncaught application exceptions occurred",
+      "passed": true
+    }
+  ]
+}

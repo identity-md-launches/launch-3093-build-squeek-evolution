@@ -1,0 +1,17 @@
+{
+  "maximumBytes": 8388608,
+  "addedBytes": 2607609,
+  "files": 73,
+  "pathBudgetsBytes": {
+    "dist": 4194304,
+    "artifacts": 524288,
+    "sourceAndConfiguration": 3670016
+  },
+  "actualPathBytes": {
+    "dist": 1503035,
+    "artifacts": 424230,
+    "sourceAndConfiguration": 680344
+  },
+  "generatedDependencyAndCacheBytesSubmitted": 0,
+  "note": "dist/, source, lockfile, runtime assets, screenshots and reports are included; no submodule, dependency archive, database or cache is submitted."
+}

@@ -1,0 +1,15 @@
+# Explicit submission path budget: 8,388,608 bytes maximum in total.
+# /dist/**: <= 4,194,304 bytes (required production export, included).
+# /artifacts/**: <= 524,288 bytes (reports, licenses and screenshots, included).
+# Source, public assets, manifests, lockfile and root docs: <= 3,670,016 bytes.
+!/artifacts/
+!/artifacts/**
+# Every generated path below has a submission budget of 0 bytes, at every depth.
+**/node_modules/
+**/.cache/
+**/.vite/
+**/.npm/
+**/npm-cache/
+**/*.tsbuildinfo
+/test/scratch/
+/runtime/

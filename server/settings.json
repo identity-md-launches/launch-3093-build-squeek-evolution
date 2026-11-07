@@ -1,0 +1,7 @@
+{
+  "port": 8787,
+  "publicOrigin": "http://localhost:8787",
+  "allowedOrigins": ["http://localhost:8787"],
+  "databasePath": "runtime/squeek.sqlite",
+  "rpcUrl": "https://ethereum-sepolia-rpc.publicnode.com"
+}

@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-11-07T05:27:48.433Z",
+  "chainId": 11155111,
+  "core": "0xfd6c166d4b8e2962e65746a13e5a0797cd4de0c4",
+  "release": "core-sepolia-20261103",
+  "rpcSource": "https://ethereum-sepolia-rpc.publicnode.com",
+  "https://api.squeekchain.com/v1/status": {
+    "ok": true,
+    "generatedAt": "2026-11-07T05:27:48.347Z"
+  },
+  "https://api.squeekchain.com/v1/measurement/stats?range=7d": {
+    "ok": true,
+    "generatedAt": "2026-11-07T05:27:21.880Z"
+  },
+  "https://api.squeekchain.com/v1/settlements": {
+    "ok": true,
+    "generatedAt": "2026-11-07T05:27:43.777Z",
+    "chain": {
+      "target": "sepolia",
+      "chainId": "11155111",
+      "confirmations": "12",
+      "deploymentBlock": "12057556",
+      "indexedThroughBlock": "12081588",
+      "safeThroughBlock": "12081577"
+    },
+    "recentCount": 10
+  },
+  "https://api.squeekchain.com/v1/core": {
+    "ok": true,
+    "chain": {
+      "target": "sepolia",
+      "chainId": "11155111",
+      "confirmations": "12",
+      "deploymentBlock": "12057556",
+      "indexedThroughBlock": "12081588",
+      "safeThroughBlock": "12081577"
+    },
+    "identities": {
+      "factory": "0xfb659c3580bed5426b855c76c34cfb8450511dbc",
+      "core": "0xfd6c166d4b8e2962e65746a13e5a0797cd4de0c4",
+      "proxyAdmin": "0x21b3cb8f00d0d47b246a57d04152d6e11d24abb3",
+      "proxyAdminOwner": "0xaa2e9621de9ac23cbb36d1a1bac4c8b0694cc30d",
+      "operatorTimelock": "0xaa2e9621de9ac23cbb36d1a1bac4c8b0694cc30d",
+      "operatorProposer": "0x3a83a80b9249eca85a9540ec878bd968f13cb676",
+      "proxyImplementation": "0x6869d6102696243fd17013ab955d99cd0c522ad3",
+      "proxyAdminSlot": "0x21b3cb8f00d0d47b246a57d04152d6e11d24abb3"
+    }
+  },
+  "receiptVerification": {
+    "ok": true,
+    "hash": "0xefd9301cef0daa4b28057a3fdae77417227d5c97e0751e264c20a5eb536b075a",
+    "blockHash": "0x7f012d652654cfbe4b83cc8416a20b445b3a4b219af8c7ddc989119e27bcb142",
+    "blockNumber": "12081553",
+    "timestamp": 1794028836,
+    "confirmations": "37",
+    "work": "570",
+    "blocks": "65",
+    "rounds": [
+      {
+        "id": "489",
+        "work": "570",
+        "dataHash": "0xb26eabafd24f6ef65c3966c740447693f394438c7bdd22ab76037811a2719dc2"
+      }
+    ],
+    "through": "489",
+    "logIndex": 940
+  }
+}

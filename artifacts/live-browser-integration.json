@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-11-07T05:33:33.720Z",
+  "networkBridge": true,
+  "note": "Live API and public Sepolia RPC only. An isolated guest save is dated before the selected historical receipts to exercise conversion without waiting for future rounds. No activity, receipts, users or global scores are fabricated.",
+  "confirmedProofs": [
+    {
+      "hash": "0xefd9301cef0daa4b28057a3fdae77417227d5c97e0751e264c20a5eb536b075a",
+      "work": "570",
+      "round": "489"
+    },
+    {
+      "hash": "0x9f5eb6fb2633ab681922499bdde6b15b1930424922a0027a0d54639c587e2a4a",
+      "work": "392",
+      "round": "485"
+    },
+    {
+      "hash": "0x741b9651c490a2ee97c5898c1637d0f58a4bd4941d1138dfba4bd8e1410f8e1c",
+      "work": "353",
+      "round": "487"
+    }
+  ],
+  "ok": true,
+  "confirmedEnergy": 131,
+  "stage": "Young",
+  "proofs": [
+    {
+      "hash": "0xefd9301cef0daa4b28057a3fdae77417227d5c97e0751e264c20a5eb536b075a",
+      "work": "570",
+      "round": "489"
+    },
+    {
+      "hash": "0x9f5eb6fb2633ab681922499bdde6b15b1930424922a0027a0d54639c587e2a4a",
+      "work": "392",
+      "round": "485"
+    },
+    {
+      "hash": "0x741b9651c490a2ee97c5898c1637d0f58a4bd4941d1138dfba4bd8e1410f8e1c",
+      "work": "353",
+      "round": "487"
+    }
+  ],
+  "duplicateRewardBlocked": true,
+  "worldEventActivated": true,
+  "evolutionRewardSeeds": 20
+}

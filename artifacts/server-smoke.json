@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-07T05:33:35.335Z",
+  "note": "Runs the production server entry with its real HTTP implementation and a fresh persistent SQLite database. No users or scores are seeded.",
+  "results": [
+    {
+      "name": "Production npm-start entry serves the actual built game",
+      "passed": true
+    },
+    {
+      "name": "Production host advertises its real same-origin service",
+      "passed": true
+    },
+    {
+      "name": "Fresh persistent storage has an empty, truthful global leaderboard",
+      "passed": true
+    },
+    {
+      "name": "Private profiles require ownership and malformed requests fail safely",
+      "passed": true
+    },
+    {
+      "name": "Production CORS refuses unconfigured origins",
+      "passed": true
+    }
+  ]
+}

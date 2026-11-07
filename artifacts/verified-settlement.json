@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-11-07T04:42:55.980Z",
+  "chainId": 11155111,
+  "core": "0xfd6c166d4b8e2962e65746a13e5a0797cd4de0c4",
+  "release": "core-sepolia-20261103",
+  "rpcSource": "https://ethereum-sepolia-rpc.publicnode.com",
+  "receiptVerification": {
+    "ok": true,
+    "hash": "0x9f5eb6fb2633ab681922499bdde6b15b1930424922a0027a0d54639c587e2a4a",
+    "blockHash": "0xc32c611cc1ec21015c1e6aaf203a8e5c1ea0e67e380ddb5aba1b95df4eff8790",
+    "blockNumber": "12081356",
+    "timestamp": 1794026436,
+    "confirmations": "12",
+    "work": "392",
+    "blocks": "44",
+    "rounds": [
+      {
+        "id": "485",
+        "work": "392",
+        "dataHash": "0x5f2f063113adc1555e255b04a4036f6f04efe02ad854ccf10d1bf30d69345641"
+      }
+    ],
+    "through": "485",
+    "logIndex": 124
+  }
+}

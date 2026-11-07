@@ -1,0 +1,22 @@
+{
+  "relativeAssetReferencesChecked": 13,
+  "missingAssets": [],
+  "staticBase": "./",
+  "requiredFilesPresent": true,
+  "exportAssets": {
+    "assets/ccip-BxuAbGy1.js": "0d029a50e6ad914d14af5662712fb95a02713f18ebad8a1a2125e62ba2c81cef",
+    "assets/dist-tG3f5lWI.js": "d132d746777fdf02760f2de0637361a7f8ebb204e15d8eebb937b4fa0e16065c",
+    "assets/hooks.module-DE9oX6xH.js": "18290b66f5736ddfcd375526f88fd55c2ecf072d6feee11d3554a78df4a3594f",
+    "assets/index-CWf1DDcl.js": "666ea5e6baf3f2dc34bb9c3ab538e39c9d2e7f8d0b60cc7c0795a7f129413ee0",
+    "assets/index-Cw8f-1Lp.css": "f2e56dc74336054527f8736a94b0faed2326ce55d0f151d8908137e59e018ed6",
+    "assets/index-DqsNPQ5S.js": "a3a5e97f82d8a1597ee0e7e92a06eb076c35c0570bfa95c4abafc8b2a1549604",
+    "dm-sans.woff2": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543",
+    "favicon.svg": "72314825ece3cfacf74878b14f68e14a672f16258c45dd9196dbc20a0f0b0469",
+    "index.html": "e3cc2e838b851417477a4faeb040095773cda58ee307a9197b0baad53f21e70b",
+    "og-image.png": "89d21bbeec12e58688caab0e31ca99c43913962460b794709f9faf3f190aceb6",
+    "runtime-config.json": "e997bb7d26d85eeddc44a3b4585a2c916ce04bc513b9729e6453d1c7c585b88f",
+    "wallets/metaMask.svg": "892c7dfab8c4ca5682878dda3f42f55a75195d7d365e4adb0832845f3a0a2135",
+    "wallets/phantom.svg": "f841f8112e131259a2e5123177950099c79487e61e77971f4e193e6c374419eb",
+    "wallets/rabby.svg": "dcae4de88ebfa10cffa1fe28df13d7c8c0b40736ef2b704f1f2fc348e777e443"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "checkedAt": "2026-11-07T05:48:33.881Z",
+  "note": "Isolated tests use generated in-memory signing keys and explicitly injected settlement fixtures. No test accounts or scores enter the product.",
+  "results": [
+    {
+      "name": "All five care actions change actual game state; care XP stays separate from energy",
+      "passed": true
+    },
+    {
+      "name": "Daily mission rewards cannot be claimed twice and reset at UTC midnight",
+      "passed": true
+    },
+    {
+      "name": "Evolution thresholds use only verified energy",
+      "passed": true
+    },
+    {
+      "name": "Malformed transaction hashes fail before RPC access",
+      "passed": true
+    },
+    {
+      "name": "Wrong RPC network fails closed",
+      "passed": true
+    },
+    {
+      "name": "Corrupt local or cloud saves are rejected before they can break the game",
+      "passed": true
+    },
+    {
+      "name": "Evolution grants every crossed stage reward exactly once, including a direct Legendary jump",
+      "passed": true
+    },
+    {
+      "name": "Missing receipts are unavailable rather than zero work",
+      "passed": true
+    },
+    {
+      "name": "Reverted and wrong-contract receipts cannot earn rewards",
+      "passed": true
+    },
+    {
+      "name": "A pending or noncanonical receipt cannot be promoted to confirmed",
+      "passed": true
+    },
+    {
+      "name": "Verification deadline returns unavailable and prevents later RPC phases",
+      "passed": true
+    },
+    {
+      "name": "Malformed official responses fail closed while missing observations remain unknown",
+      "passed": true
+    },
+    {
+      "name": "Two real cryptographic ownership signatures create separate shared profiles",
+      "passed": true
+    },
+    {
+      "name": "Used sign-in nonce cannot be replayed",
+      "passed": true
+    },
+    {
+      "name": "Wrong wallet signature is rejected",
+      "passed": true
+    },
+    {
+      "name": "Unauthenticated score or claim submissions are refused",
+      "passed": true
+    },
+    {
+      "name": "A settlement before registration cannot earn energy",
+      "passed": true
+    },
+    {
+      "name": "Verified work earns energy; duplicate rounds and client-supplied scores cannot inflate it",
+      "passed": true
+    },
+    {
+      "name": "Two independent sessions see the same wallet profile and global rank",
+      "passed": true
+    },
+    {
+      "name": "Cloud save revisions prevent silent overwrites from another device",
+      "passed": true
+    },
+    {
+      "name": "Profiles, claims, sessions and leaderboard survive a database restart",
+      "passed": true
+    },
+    {
+      "name": "NFT preparation exports evidence without inventing a mint or contract",
+      "passed": true
+    },
+    {
+      "name": "Canonical block reconciliation removes rewards from reorged blocks",
+      "passed": true
+    },
+    {
+      "name": "Expired ownership challenges are rejected",
+      "passed": true
+    },
+    {
+      "name": "Disconnect revokes the shared session",
+      "passed": true
+    }
+  ]
+}
