@@ -1,0 +1,218 @@
+{
+  "checkedAt": "2026-11-07T06:16:59.777Z",
+  "baseline": true,
+  "note": "Production dist client. Isolated SQLite service with test registration frontier; genuine ownership signatures from generated in-memory accounts. RPC outage is injected, then real public Sepolia responses pass through the optional Node bridge unchanged. No test accounts, scores or responses enter dist.",
+  "evidence": {
+    "name320": {
+      "width": 320,
+      "scrollWidth": 547,
+      "room": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+        "x": 26,
+        "right": 364.734375,
+        "width": 338.734375,
+        "height": 33.59375,
+        "scrollWidth": 339,
+        "clientWidth": 339
+      },
+      "pet": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "x": 77,
+        "right": 547.40625,
+        "width": 470.40625,
+        "height": 24,
+        "scrollWidth": 470,
+        "clientWidth": 470
+      },
+      "avatar": {
+        "text": "",
+        "x": 30,
+        "right": 70,
+        "width": 40,
+        "height": 40,
+        "scrollWidth": 40,
+        "clientWidth": 40
+      },
+      "tools": {
+        "text": "",
+        "x": 242,
+        "right": 294,
+        "width": 52,
+        "height": 30,
+        "scrollWidth": 52,
+        "clientWidth": 52
+      }
+    },
+    "name390": {
+      "width": 390,
+      "scrollWidth": 553,
+      "room": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+        "x": 30,
+        "right": 368.734375,
+        "width": 338.734375,
+        "height": 33.59375,
+        "scrollWidth": 339,
+        "clientWidth": 339
+      },
+      "pet": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "x": 83,
+        "right": 553.40625,
+        "width": 470.40625,
+        "height": 24,
+        "scrollWidth": 470,
+        "clientWidth": 470
+      },
+      "avatar": {
+        "text": "",
+        "x": 36,
+        "right": 76,
+        "width": 40,
+        "height": 40,
+        "scrollWidth": 40,
+        "clientWidth": 40
+      },
+      "tools": {
+        "text": "",
+        "x": 302,
+        "right": 360,
+        "width": 58,
+        "height": 30,
+        "scrollWidth": 58,
+        "clientWidth": 58
+      }
+    },
+    "name1440": {
+      "width": 1440,
+      "scrollWidth": 1714,
+      "room": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+        "x": 280,
+        "right": 712.09375,
+        "width": 432.09375,
+        "height": 19.1875,
+        "scrollWidth": 432,
+        "clientWidth": 432
+      },
+      "pet": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "x": 1214,
+        "right": 1684.40625,
+        "width": 470.40625,
+        "height": 24,
+        "scrollWidth": 470,
+        "clientWidth": 470
+      },
+      "avatar": {
+        "text": "",
+        "x": 1156,
+        "right": 1204,
+        "width": 48,
+        "height": 48,
+        "scrollWidth": 48,
+        "clientWidth": 48
+      },
+      "tools": {
+        "text": "",
+        "x": 1027,
+        "right": 1090,
+        "width": 63,
+        "height": 31,
+        "scrollWidth": 63,
+        "clientWidth": 63
+      }
+    },
+    "missionXp": {
+      "xp": 107,
+      "badges": [
+        "best-friends"
+      ]
+    },
+    "playXp": {
+      "xp": 100,
+      "badges": []
+    },
+    "loadedXp": {
+      "xp": 107,
+      "badges": []
+    },
+    "boardFailure": "Global leaderboard\n\nA shared place for verified little legends.\n\nGame service\nShared persistent rankings\nRefresh rankings\nThe first little legend could be you.\n\nNo profiles have joined this service yet. Connect your wallet and verify ownership to begin.\n\nView service connection\nNo example players. Only real wallet profiles.\nEvery point has a proof\n\nScore = energy × 100 + blockchain achievements × 25 + evolution stage × 500. Game XP never affects global rank.\n\nOne round, one reward\n\nThe service verifies Sepolia receipts and deduplicates rounds per wallet. Only work settled after joining is eligible.\n\nMochi is happy to see you. What shall we do?\nMade for little moments.\nSepolia testnet · No real-money rewards\nSettings",
+    "reconnect": {
+      "before": {
+        "xp": 5,
+        "pet": 1
+      },
+      "after": {
+        "xp": 0,
+        "pet": 0
+      }
+    },
+    "proof-manual": {
+      "energy": "Unavailable",
+      "status": "604 work units verified. 81 confirmations. Local proof saved.",
+      "error": "page.waitForFunction: Timeout 4000ms exceeded."
+    },
+    "proof-sources": {
+      "energy": "Unavailable",
+      "status": "Verifies the network, canonical receipt, pinned core identity, events, round ledger and completed blocks.",
+      "error": "page.waitForFunction: Timeout 4000ms exceeded."
+    }
+  },
+  "results": [
+    {
+      "name": "24-letter rename fits at 320px",
+      "passed": false,
+      "details": "Expected values to be strictly equal:\n\n547 !== 320\n"
+    },
+    {
+      "name": "24-letter rename fits at 390px",
+      "passed": false,
+      "details": "Expected values to be strictly equal:\n\n553 !== 390\n"
+    },
+    {
+      "name": "24-letter rename fits at 1440px",
+      "passed": false,
+      "details": "Expected values to be strictly equal:\n\n1714 !== 1440\n"
+    },
+    {
+      "name": "Mission collection unlocks Tiny beginnings immediately at 107 XP",
+      "passed": false,
+      "details": "The expression evaluated to a falsy value:\n\n  assert8.ok(g.badges.includes(\"first-steps\"))\n"
+    },
+    {
+      "name": "Completed play awards the 100-XP badge once",
+      "passed": false,
+      "details": "The expression evaluated to a falsy value:\n\n  assert8.ok(played.badges.includes(\"first-steps\"))\n"
+    },
+    {
+      "name": "Loading a qualifying older save reconciles the XP achievement",
+      "passed": false,
+      "details": "The expression evaluated to a falsy value:\n\n  assert8.ok(loaded.badges.includes(\"first-steps\"))\n"
+    },
+    {
+      "name": "Ranking read failure is unavailable and retry recovers to a true empty result",
+      "passed": false,
+      "details": "The input did not match the regular expression /Shared rankings unavailable/. Input:\n\n'Global leaderboard\\n' +\n  '\\n' +\n  'A shared place for verified little legends.\\n' +\n  '\\n' +\n  'Game service\\n' +\n  'Shared persistent rankings\\n' +\n  'Refresh rankings\\n' +\n  'The first little legend could be you.\\n' +\n  '\\n' +\n  'No profiles have joined this service yet. Connect your wallet and verify ownership to begin.\\n' +\n  '\\n' +\n  'View service connection\\n' +\n  'No example players. Only real wallet profiles.\\n' +\n  'Every point has a proof\\n' +\n  '\\n' +\n  'Score = energy × 100 + blockchain achievements × 25 + evolution stage × 500. Game XP never affects global rank.\\n' +\n  '\\n' +\n  'One round, one reward\\n' +\n  '\\n' +\n  'The service verifies Sepolia receipts and deduplicates rounds per wallet. Only work settled after joining is eligible.\\n' +\n  '\\n' +\n  'Mochi is happy to see you. What shall we do?\\n' +\n  'Made for little moments.\\n' +\n  'Sepolia testnet · No real-money rewards\\n' +\n  'Settings'\n"
+    },
+    {
+      "name": "Signed reconnect preserves newer local wallet care",
+      "passed": false,
+      "details": "Expected values to be strictly equal:\n\n0 !== 5\n"
+    },
+    {
+      "name": "Saved proof outage recovers through manual",
+      "passed": false,
+      "details": "page.waitForFunction: Timeout 4000ms exceeded."
+    },
+    {
+      "name": "Saved proof outage recovers through sources",
+      "passed": false,
+      "details": "page.waitForFunction: Timeout 4000ms exceeded."
+    },
+    {
+      "name": "No page exceptions",
+      "passed": true
+    }
+  ]
+}

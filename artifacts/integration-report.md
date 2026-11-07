@@ -60,3 +60,12 @@ Isolated tests use two generated signers, distinct sessions and browser contexts
 The project includes the complete static export and runnable shared service. **No public shared backend was deployed during this run.** The publication system assigns the frontend URL after submission, so no public website URL was available to report here. A static-only deployment honestly marks shared accounts/rankings unavailable until the host supplies a service origin. The README documents the complete local service and public-host configuration.
 
 WebKit could not launch because required OS libraries were missing, and the provided browser MCP could not start its configured Chrome. Actual rendered checks were performed with Playwright Chromium. Browser-native zoom, screen readers, physical wallets and physical mobile devices remain untested. NFT metadata and proof export are prepared; no NFT has been minted. Care saves are client-owned game state; only the service's verified ledger affects authoritative global scores.
+
+
+## Revision recovery checks — 7 November 2026
+
+The four official API reads were rerun successfully; `live-integration.json` records a fresh, actually verified Sepolia settlement for round 494 (64 work units, 7 blocks, 53 confirmations at that read). Contract, ABI, RPC and wallet configuration are unchanged by this revision.
+
+Production-browser regressions first block both configured public RPC hosts, then restore real upstream responses. The reported 604-work transaction now restores 60 confirmed Evolution Energy and Baby through manual receipt verification, Refresh sources, or Retry saved proofs. With a second real 392-work receipt unavailable, the total stays Unavailable; only a complete recheck restores the combined 99 energy. Duplicate verification can trigger recovery without awarding duplicate rewards. Full results and the historical guest-save setup are disclosed in `revision-tests.json` and `validation.md`.
+
+The shared service's healthy connection and leaderboard reads now have distinct states: a failed read shows its returned error and a retry, without claiming the leaderboard is empty. Signed same-device reconnect preserves local care; cross-device cloud restoration and explicit save/load were retested against isolated production HTTP handlers. These checks do not constitute a public service deployment or a real extension/passkey approval.

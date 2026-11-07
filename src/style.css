@@ -450,14 +450,18 @@ main:focus {
 }
 .room-name h2 {
   font-size: var(--text-base);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .room-name > .icon-button {
+  flex-shrink: 0;
   min-width: 26px;
   min-height: 26px;
   padding: 3px;
 }
 .room-tools {
   display: flex;
+  flex-shrink: 0;
   gap: 2px;
 }
 .room-tools .icon-button {
@@ -656,6 +660,10 @@ main:focus {
 .pet-message > svg {
   color: #9b7770;
 }
+.pet-message > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .pet-stats {
   background: var(--surface);
   border-radius: var(--radius);
@@ -669,6 +677,7 @@ main:focus {
   padding-bottom: 22px;
 }
 .avatar {
+  flex-shrink: 0;
   background: #f2ead4;
   border-radius: 12px;
   width: 48px;
@@ -681,12 +690,17 @@ main:focus {
 .pet-identity h2 {
   font-size: var(--text-lg);
   margin-bottom: 5px;
+  overflow-wrap: anywhere;
+}
+.pet-identity > div:not(.avatar) {
+  min-width: 0;
 }
 .pet-identity > div > span {
   font-size: var(--text-xs);
   color: var(--muted);
 }
 .mood-symbol {
+  flex-shrink: 0;
   margin-inline-start: auto;
   color: #ac873d;
 }
@@ -897,6 +911,7 @@ progress::-moz-progress-bar {
   flex-direction: column;
   gap: 3px;
   min-width: 0;
+  overflow-wrap: anywhere;
   flex: 1;
 }
 .mission-copy > b {
@@ -958,6 +973,10 @@ progress::-moz-progress-bar {
   align-items: flex-start;
   padding: 10px 0 17px;
 }
+.world-callout > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .world-icon {
   background: #e8eddf;
   border-radius: 12px;
@@ -998,6 +1017,8 @@ progress::-moz-progress-bar {
 }
 .button {
   min-height: 44px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1043,6 +1064,10 @@ progress::-moz-progress-bar {
   align-items: center;
   padding: 32px;
   background: #e9eddf;
+}
+.evolution-hero > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .evolution-pet {
   height: 170px;
@@ -1617,6 +1642,7 @@ progress::-moz-progress-bar {
   margin-inline-end: -6px;
 }
 .dialog p {
+  overflow-wrap: anywhere;
   font-size: var(--text-sm);
   margin-bottom: 18px;
 }

@@ -59,6 +59,11 @@ export function newGame(now = Date.now()): Game {
   };
 }
 const cap = (n: number) => Math.max(0, Math.min(100, n));
+function reconcileXpAchievement(g: Game): Game {
+  return g.xp >= 100 && !g.badges.includes("first-steps")
+    ? { ...g, badges: [...g.badges, "first-steps"] }
+    : g;
+}
 export function tickGame(g: Game, now = Date.now()): Game {
   const minutes = Math.max(0, Math.min(480, (now - g.updatedAt) / 60000));
   const n = {
@@ -80,7 +85,7 @@ export function tickGame(g: Game, now = Date.now()): Game {
     n.claimed = [];
     n.seeds += 5;
   }
-  return n;
+  return reconcileXpAchievement(n);
 }
 export function act(
   g: Game,
@@ -157,13 +162,11 @@ export function act(
     n.badges = [...n.badges, "best-friends"];
   if (n.lifetime.clean >= 3 && !n.badges.includes("tidy-paws"))
     n.badges = [...n.badges, "tidy-paws"];
-  if (n.xp >= 100 && !n.badges.includes("first-steps"))
-    n.badges = [...n.badges, "first-steps"];
-  return { game: n, mode, message };
+  return { game: reconcileXpAchievement(n), mode, message };
 }
 export function finishPlay(g: Game, caught: number, bonus = false): Game {
   const good = Math.max(0, Math.min(8, Math.floor(caught)));
-  return {
+  return reconcileXpAchievement({
     ...g,
     counts: { ...g.counts, play: g.counts.play + 1 },
     lifetime: { ...g.lifetime, play: g.lifetime.play + 1 },
@@ -174,7 +177,7 @@ export function finishPlay(g: Game, caught: number, bonus = false): Game {
       good === 8 && !g.badges.includes("seed-champion")
         ? [...g.badges, "seed-champion"]
         : g.badges,
-  };
+  });
 }
 export const MISSIONS = [
   {
@@ -244,12 +247,12 @@ export function claimMission(
     (m.action ? g.counts[m.action] < m.target : !verifiedToday)
   )
     return g;
-  return {
+  return reconcileXpAchievement({
     ...g,
     seeds: g.seeds + m.seeds,
     xp: g.xp + m.xp,
     claimed: [...g.claimed, id],
-  };
+  });
 }
 export const BADGES = [
   {
@@ -405,16 +408,19 @@ export function isGame(value: unknown): value is Game {
     return false;
   return true;
 }
-export function loadGame(key: string): Game {
+export function readSavedGame(key: string): Game | null {
   try {
     const raw = localStorage.getItem(key);
-    if (!raw) return newGame();
+    if (!raw) return null;
     const g = JSON.parse(raw);
     if (g && !g.evolutionRewards) g.evolutionRewards = [];
     if (!isGame(g)) throw Error();
     return tickGame(g);
   } catch {
-    return newGame();
+    return null;
   }
+}
+export function loadGame(key: string): Game {
+  return readSavedGame(key) ?? newGame();
 }
 export const serializeGame = (g: Game) => JSON.stringify(g);

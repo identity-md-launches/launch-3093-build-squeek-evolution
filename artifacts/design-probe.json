@@ -1,11 +1,11 @@
 {
-  "checkedAt": "2026-11-07T05:50:54.216Z",
+  "checkedAt": "2026-11-07T06:23:47.922Z",
   "checks": [
     {
       "name": "render",
       "passed": true,
       "exitCode": 0,
-      "durationMs": 9302,
+      "durationMs": 8926,
       "output": "renders, no script errors or missing local files\nexternal hosts: api.squeekchain.com"
     },
     {
@@ -33,7 +33,7 @@
       "name": "casing",
       "passed": true,
       "exitCode": 0,
-      "durationMs": 1,
+      "durationMs": 0,
       "output": "no all-caps text in content"
     },
     {
@@ -47,15 +47,15 @@
       "name": "eyebrows",
       "passed": true,
       "exitCode": 0,
-      "durationMs": 0,
+      "durationMs": 1,
       "output": "no kicker labels above headings"
     },
     {
       "name": "type-sizes",
       "passed": true,
       "exitCode": 0,
-      "durationMs": 1,
-      "output": "390: 4 sizes in use, 5 with one-offs (12px\u00d752, 14px\u00d75, 16px\u00d73, 20px\u00d72, 28px\u00d71)\n1440: 5 sizes in use, 5 with one-offs (12px\u00d751, 14px\u00d718, 16px\u00d74, 20px\u00d72, 28px\u00d72)\nbar: 6 sizes used more than once, 8 counting one-offs, per width"
+      "durationMs": 0,
+      "output": "390: 4 sizes in use, 5 with one-offs (12px×52, 14px×5, 16px×3, 20px×2, 28px×1)\n1440: 5 sizes in use, 5 with one-offs (12px×51, 14px×18, 16px×4, 20px×2, 28px×2)\nbar: 6 sizes used more than once, 8 counting one-offs, per width"
     },
     {
       "name": "type-faces",
@@ -68,7 +68,7 @@
       "name": "glyphs",
       "passed": true,
       "exitCode": 0,
-      "durationMs": 0,
+      "durationMs": 1,
       "output": "no em dashes or emoji in text"
     },
     {
@@ -89,7 +89,7 @@
       "name": "copy-budget",
       "passed": true,
       "exitCode": 0,
-      "durationMs": 1,
+      "durationMs": 0,
       "output": "prose on the first screen: 17 words at 390 (bar 60), 26 at 1440 (bar 90)\nall words on the first screen: 63 at 390, 118 at 1440\nwhole page: 182 words, 44 of them prose"
     },
     {
@@ -111,10 +111,7 @@
       "passed": true,
       "exitCode": 0,
       "durationMs": 0,
-      "output": "title \"Squeek Evolution \u00b7 Your tiny world\", favicon, og:title, og:image, description"
+      "output": "title \"Squeek Evolution · Your tiny world\", favicon, og:title, og:image, description"
     }
-  ],
-  "externalHosts": [
-    "api.squeekchain.com"
   ]
 }

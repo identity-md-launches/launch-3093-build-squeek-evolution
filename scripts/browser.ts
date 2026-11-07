@@ -368,6 +368,7 @@ try {
     async () => {
       await page.route("https://api.squeekchain.com/**", (r) => r.abort());
       await page.goto(base + "#activity");
+      await page.reload();
       await page
         .getByText("Live measurement unavailable", { exact: true })
         .waitFor();

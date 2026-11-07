@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-07T05:33:35.335Z",
+  "checkedAt": "2026-11-07T06:28:00.676Z",
   "note": "Runs the production server entry with its real HTTP implementation and a fresh persistent SQLite database. No users or scores are seeded.",
   "results": [
     {

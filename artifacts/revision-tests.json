@@ -1,0 +1,348 @@
+{
+  "checkedAt": "2026-11-07T06:25:36.756Z",
+  "baseline": false,
+  "note": "Production dist client. Isolated SQLite service with test registration frontier; genuine ownership signatures from generated in-memory accounts. RPC outage is injected, then real public Sepolia responses pass through the optional Node bridge unchanged. No test accounts, scores or responses enter dist.",
+  "evidence": {
+    "name320": {
+      "width": 320,
+      "scrollWidth": 320,
+      "room": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+        "x": 26,
+        "right": 234,
+        "width": 208,
+        "height": 33.59375,
+        "scrollWidth": 208,
+        "clientWidth": 208
+      },
+      "pet": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "x": 77,
+        "right": 290,
+        "width": 213,
+        "height": 72,
+        "scrollWidth": 213,
+        "clientWidth": 213
+      },
+      "avatar": {
+        "text": "",
+        "x": 30,
+        "right": 70,
+        "width": 40,
+        "height": 40,
+        "scrollWidth": 40,
+        "clientWidth": 40
+      },
+      "tools": {
+        "text": "",
+        "x": 242,
+        "right": 294,
+        "width": 52,
+        "height": 30,
+        "scrollWidth": 52,
+        "clientWidth": 52
+      }
+    },
+    "name390": {
+      "width": 390,
+      "scrollWidth": 390,
+      "room": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+        "x": 30,
+        "right": 294,
+        "width": 264,
+        "height": 33.59375,
+        "scrollWidth": 264,
+        "clientWidth": 264
+      },
+      "pet": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "x": 83,
+        "right": 354,
+        "width": 271,
+        "height": 48,
+        "scrollWidth": 271,
+        "clientWidth": 271
+      },
+      "avatar": {
+        "text": "",
+        "x": 36,
+        "right": 76,
+        "width": 40,
+        "height": 40,
+        "scrollWidth": 40,
+        "clientWidth": 40
+      },
+      "tools": {
+        "text": "",
+        "x": 302,
+        "right": 360,
+        "width": 58,
+        "height": 30,
+        "scrollWidth": 58,
+        "clientWidth": 58
+      }
+    },
+    "name1440": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "room": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+        "x": 280,
+        "right": 712.09375,
+        "width": 432.09375,
+        "height": 19.1875,
+        "scrollWidth": 432,
+        "clientWidth": 432
+      },
+      "pet": {
+        "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+        "x": 1214,
+        "right": 1352,
+        "width": 138,
+        "height": 96,
+        "scrollWidth": 138,
+        "clientWidth": 138
+      },
+      "avatar": {
+        "text": "",
+        "x": 1156,
+        "right": 1204,
+        "width": 48,
+        "height": 48,
+        "scrollWidth": 48,
+        "clientWidth": 48
+      },
+      "tools": {
+        "text": "",
+        "x": 1027,
+        "right": 1090,
+        "width": 63,
+        "height": 31,
+        "scrollWidth": 63,
+        "clientWidth": 63
+      }
+    },
+    "missionXp": {
+      "xp": 107,
+      "badges": [
+        "best-friends",
+        "first-steps"
+      ]
+    },
+    "playXp": {
+      "xp": 100,
+      "badges": [
+        "first-steps"
+      ]
+    },
+    "loadedXp": {
+      "xp": 107,
+      "badges": [
+        "first-steps"
+      ]
+    },
+    "boardFailure": "Global leaderboard\n\nA shared place for verified little legends.\n\nGame service\nShared rankings unavailable\nRetry rankings\nRankings could not be loaded\n\nVerification service is unavailable. Check the connection and try again.\n\nEvery point has a proof\n\nScore = energy × 100 + blockchain achievements × 25 + evolution stage × 500. Game XP never affects global rank.\n\nOne round, one reward\n\nThe service verifies Sepolia receipts and deduplicates rounds per wallet. Only work settled after joining is eligible.\n\nMochi is happy to see you. What shall we do?\nMade for little moments.\nSepolia testnet · No real-money rewards\nSettings",
+    "reconnect": {
+      "before": {
+        "xp": 5,
+        "pet": 1
+      },
+      "after": {
+        "xp": 5,
+        "pet": 1
+      }
+    },
+    "proof-manual": {
+      "energy": "60",
+      "status": "604 work units verified. 123 confirmations. Local proof saved."
+    },
+    "proof-sources": {
+      "energy": "60",
+      "status": "Verifies the network, canonical receipt, pinned core identity, events, round ledger and completed blocks."
+    },
+    "proof-retry": {
+      "energy": "60",
+      "status": "Verifies the network, canonical receipt, pinned core identity, events, round ledger and completed blocks."
+    },
+    "proof-partial": {
+      "duringPartialFailure": "Unavailable",
+      "recoveredEnergy": 99,
+      "savedProofs": 2
+    }
+  },
+  "results": [
+    {
+      "name": "24-letter rename fits at 320px",
+      "passed": true,
+      "details": {
+        "width": 320,
+        "scrollWidth": 320,
+        "room": {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+          "x": 26,
+          "right": 234,
+          "width": 208,
+          "height": 33.59375,
+          "scrollWidth": 208,
+          "clientWidth": 208
+        },
+        "pet": {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+          "x": 77,
+          "right": 290,
+          "width": 213,
+          "height": 72,
+          "scrollWidth": 213,
+          "clientWidth": 213
+        },
+        "avatar": {
+          "text": "",
+          "x": 30,
+          "right": 70,
+          "width": 40,
+          "height": 40,
+          "scrollWidth": 40,
+          "clientWidth": 40
+        },
+        "tools": {
+          "text": "",
+          "x": 242,
+          "right": 294,
+          "width": 52,
+          "height": 30,
+          "scrollWidth": 52,
+          "clientWidth": 52
+        }
+      }
+    },
+    {
+      "name": "24-letter rename fits at 390px",
+      "passed": true,
+      "details": {
+        "width": 390,
+        "scrollWidth": 390,
+        "room": {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+          "x": 30,
+          "right": 294,
+          "width": 264,
+          "height": 33.59375,
+          "scrollWidth": 264,
+          "clientWidth": 264
+        },
+        "pet": {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+          "x": 83,
+          "right": 354,
+          "width": 271,
+          "height": 48,
+          "scrollWidth": 271,
+          "clientWidth": 271
+        },
+        "avatar": {
+          "text": "",
+          "x": 36,
+          "right": 76,
+          "width": 40,
+          "height": 40,
+          "scrollWidth": 40,
+          "clientWidth": 40
+        },
+        "tools": {
+          "text": "",
+          "x": 302,
+          "right": 360,
+          "width": 58,
+          "height": 30,
+          "scrollWidth": 58,
+          "clientWidth": 58
+        }
+      }
+    },
+    {
+      "name": "24-letter rename fits at 1440px",
+      "passed": true,
+      "details": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "room": {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWW’s room",
+          "x": 280,
+          "right": 712.09375,
+          "width": 432.09375,
+          "height": 19.1875,
+          "scrollWidth": 432,
+          "clientWidth": 432
+        },
+        "pet": {
+          "text": "WWWWWWWWWWWWWWWWWWWWWWWW",
+          "x": 1214,
+          "right": 1352,
+          "width": 138,
+          "height": 96,
+          "scrollWidth": 138,
+          "clientWidth": 138
+        },
+        "avatar": {
+          "text": "",
+          "x": 1156,
+          "right": 1204,
+          "width": 48,
+          "height": 48,
+          "scrollWidth": 48,
+          "clientWidth": 48
+        },
+        "tools": {
+          "text": "",
+          "x": 1027,
+          "right": 1090,
+          "width": 63,
+          "height": 31,
+          "scrollWidth": 63,
+          "clientWidth": 63
+        }
+      }
+    },
+    {
+      "name": "Mission collection unlocks Tiny beginnings immediately at 107 XP",
+      "passed": true
+    },
+    {
+      "name": "Completed play awards the 100-XP badge once",
+      "passed": true
+    },
+    {
+      "name": "Loading a qualifying older save reconciles the XP achievement",
+      "passed": true
+    },
+    {
+      "name": "Ranking read failure is unavailable and retry recovers to a true empty result",
+      "passed": true
+    },
+    {
+      "name": "Signed reconnect preserves newer local wallet care",
+      "passed": true
+    },
+    {
+      "name": "Saved proof outage recovers through manual",
+      "passed": true
+    },
+    {
+      "name": "Saved proof outage recovers through sources",
+      "passed": true
+    },
+    {
+      "name": "Saved proof outage recovers through retry",
+      "passed": true
+    },
+    {
+      "name": "Saved proof outage recovers through partial",
+      "passed": true
+    },
+    {
+      "name": "No page exceptions",
+      "passed": true
+    }
+  ]
+}

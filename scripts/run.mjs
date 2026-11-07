@@ -80,6 +80,7 @@ const entries = {
   live: "scripts/live.ts",
   "live-browser": "scripts/live-browser.ts",
   browser: "scripts/browser.ts",
+  revision: "scripts/revision.ts",
 };
 if (!entries[name]) throw Error("Unknown command");
 const { build } = req("esbuild");
@@ -97,7 +98,7 @@ await build({
     js: "import { createRequire as __createRequire } from 'node:module'; const require = __createRequire(import.meta.url);",
   },
 });
-if (name === "browser" || name === "live-browser" || name === "share")
+if (["browser", "revision", "live-browser", "share"].includes(name))
   process.env.SQUEEK_PLAYWRIGHT = resolve(
     dirname(req.resolve("playwright/package.json")),
     "index.mjs",

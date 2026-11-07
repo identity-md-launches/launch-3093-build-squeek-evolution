@@ -44,6 +44,7 @@ import {
   dayKey,
   finishPlay,
   loadGame,
+  readSavedGame,
   MISSIONS,
   stageFor,
   STAGES,
@@ -204,7 +205,8 @@ function App() {
     [token, setToken] = useState(""),
     [profile, setProfile] = useState<Profile | null>(null),
     [board, setBoard] = useState<Leaderboard | null>(null),
-    [boardLoading, setBoardLoading] = useState(false);
+    [boardLoading, setBoardLoading] = useState(false),
+    [boardError, setBoardError] = useState("");
   const [revision, setRevision] = useState(0),
     [hash, setHash] = useState(""),
     [verifying, setVerifying] = useState(false),
@@ -215,6 +217,7 @@ function App() {
     [proofs, setProofs] = useState<VerifiedSettlement[]>([]),
     [proofChecking, setProofChecking] = useState(false),
     [proofUnavailable, setProofUnavailable] = useState(false),
+    [proofRevision, setProofRevision] = useState(0),
     [festival, setFestival] = useState(false);
   const [cloudBusy, setCloudBusy] = useState(false),
     [evolving, setEvolving] = useState(false),
@@ -238,7 +241,13 @@ function App() {
   const localWork = [...roundMap.values()].reduce((a, b) => a + b, 0n),
     localEnergy = Number(localWork / 10n);
   const energy = profile?.energy ?? localEnergy,
-    energyKnown = !!profile || (!proofChecking && !proofUnavailable),
+    energyKnown =
+      !!profile ||
+      (!proofChecking &&
+        !proofUnavailable &&
+        game.proofs.every((h) =>
+          proofs.some((p) => p.hash.toLowerCase() === h.toLowerCase()),
+        )),
     energyDisplay = energyKnown
       ? energy
       : proofChecking
@@ -308,12 +317,13 @@ function App() {
   const switchSave = useCallback((key: string, g?: Game) => {
     contextVersion.current++;
     setSaveKey(key);
-    const loaded = g ?? loadGame(key);
+    const loaded = g ? tickGame(g) : loadGame(key);
     setGame(loaded);
     setMode(loaded.sleeping ? "sleeping" : "idle");
     setProofs([]);
     setProofUnavailable(false);
     setProofChecking(false);
+    setProofRevision((r) => r + 1);
   }, []);
   useEffect(() => {
     if (
@@ -332,7 +342,12 @@ function App() {
   useEffect(() => {
     let stopped = false;
     const g = loadGame(saveKey);
-    if (!g.proofs.length) return;
+    if (!g.proofs.length) {
+      setProofs([]);
+      setProofChecking(false);
+      setProofUnavailable(false);
+      return;
+    }
     setProofChecking(true);
     setProofUnavailable(false);
     void (async () => {
@@ -356,13 +371,19 @@ function App() {
     return () => {
       stopped = true;
     };
-  }, [saveKey]);
+  }, [saveKey, proofRevision]);
+  function refreshSources() {
+    setRevision((r) => r + 1);
+    setProofRevision((r) => r + 1);
+  }
   const navigate = (id: string) => {
     setPage(id);
     location.hash = id;
     window.scrollTo({ top: 0, behavior: "instant" });
   };
   const connectService = useCallback(async (base: string) => {
+    setBoard(null);
+    setBoardError("");
     setServiceMessage("Connecting to game service…");
     try {
       const data = await serviceRequest<{
@@ -419,6 +440,7 @@ function App() {
   const loadBoard = useCallback(async () => {
     if (!serviceReady || serviceUrl === null) return;
     setBoardLoading(true);
+    setBoardError("");
     try {
       const data = await serviceRequest<Leaderboard>(
         serviceUrl,
@@ -434,7 +456,7 @@ function App() {
         );
     } catch (e) {
       setBoard(null);
-      setServiceMessage((e as Error).message);
+      setBoardError((e as Error).message);
     } finally {
       setBoardLoading(false);
     }
@@ -524,8 +546,14 @@ function App() {
         );
       setToken(result.token);
       setProfile(result.profile);
-      switchSave(`squeek.game.v1:${a}`, result.profile.game);
-      setMessage("Wallet verified. Your shared profile is ready.");
+      const key = `squeek.game.v1:${a}`;
+      const local = readSavedGame(key);
+      switchSave(key, local ?? result.profile.game);
+      setMessage(
+        local
+          ? "Wallet verified. Care progress on this device was kept. Use Settings to load your cloud save."
+          : "Wallet verified. Your shared profile is ready.",
+      );
     } else {
       const nonce = Array.from(crypto.getRandomValues(new Uint8Array(16)))
         .map((x) => x.toString(16).padStart(2, "0"))
@@ -580,6 +608,7 @@ function App() {
       ) {
         setProofStatus("Already verified. No duplicate energy awarded.");
         setProofKind("CONFIRMED");
+        if (!energyKnown) setProofRevision((r) => r + 1);
         return;
       }
       if (core.state !== "available")
@@ -634,6 +663,7 @@ function App() {
       }));
       setProofKind("CONFIRMED");
       setFestival(true);
+      if (!energyKnown) setProofRevision((r) => r + 1);
       const rewards = applyEvolution(game, next);
       if (rewards.seedsReward > 0) {
         setEvolutionBonus(rewards.seedsReward);
@@ -1168,6 +1198,18 @@ function App() {
                         ? "Legendary unlocked. Keep growing your collection of verified moments."
                         : `${Math.max(0, nextEnergy - energy)} more energy to ${STAGES[level + 1]}. 10 verified work units become 1 energy.`}
                   </p>
+                  {!energyKnown && (
+                    <button
+                      className="button compact"
+                      disabled={proofChecking}
+                      onClick={() => setProofRevision((r) => r + 1)}
+                    >
+                      <RefreshCw size={15} />
+                      {proofChecking
+                        ? "Rechecking saved proofs…"
+                        : "Retry saved proofs"}
+                    </button>
+                  )}
                 </div>
               </section>
               <div className="stage-grid">
@@ -1291,7 +1333,7 @@ function App() {
                 </div>
                 <button
                   className="button compact"
-                  onClick={() => setRevision((r) => r + 1)}
+                  onClick={refreshSources}
                 >
                   <RefreshCw size={15} />
                   Refresh sources
@@ -1584,11 +1626,13 @@ function App() {
               <div className="leaderboard-toolbar">
                 <div className="state-line">
                   <span
-                    className={`status-dot ${serviceReady ? "green" : "amber"}`}
+                    className={`status-dot ${serviceReady && board && !boardError ? "green" : "amber"}`}
                   />
-                  {serviceReady
-                    ? "Shared persistent rankings"
-                    : "Shared rankings unavailable"}
+                  {!serviceReady || boardError
+                    ? "Shared rankings unavailable"
+                    : boardLoading || !board
+                      ? "Reading shared rankings…"
+                      : "Shared persistent rankings"}
                 </div>
                 <button
                   className="button compact"
@@ -1596,10 +1640,14 @@ function App() {
                   onClick={() => void loadBoard()}
                 >
                   <RefreshCw size={15} />
-                  {boardLoading ? "Refreshing…" : "Refresh rankings"}
+                  {boardLoading
+                    ? "Refreshing…"
+                    : boardError
+                      ? "Retry rankings"
+                      : "Refresh rankings"}
                 </button>
               </div>
-              {profile && (
+              {profile && board && !boardError && !boardLoading && (
                 <section className="personal-rank">
                   <Trophy size={28} />
                   <div>
@@ -1626,6 +1674,12 @@ function App() {
                 <section className="surface empty-state">
                   <RefreshCw size={30} />
                   <h2>Reading shared rankings…</h2>
+                </section>
+              ) : boardError ? (
+                <section className="surface empty-state" role="status">
+                  <CloudOff size={30} />
+                  <h2>Rankings could not be loaded</h2>
+                  <p>{boardError}</p>
                 </section>
               ) : board && board.players.length ? (
                 <section className="surface leaderboard-table">
@@ -1685,12 +1739,12 @@ function App() {
                     <Trophy size={26} />
                   </div>
                   <h2>
-                    {serviceReady
+                    {serviceReady && board
                       ? "The first little legend could be you."
                       : "This room is waiting for the world."}
                   </h2>
                   <p>
-                    {serviceReady
+                    {serviceReady && board
                       ? "No profiles have joined this service yet. Connect your wallet and verify ownership to begin."
                       : serviceMessage ||
                         "A shared game service is needed to keep rankings consistent across players and devices."}
@@ -1700,12 +1754,12 @@ function App() {
                     onClick={() => setSettings(true)}
                   >
                     <Settings2 size={17} />
-                    {serviceReady
+                    {serviceReady && board
                       ? "View service connection"
                       : "Connect a game service"}
                   </button>
                   <span className="subtle-label">
-                    {serviceReady
+                    {serviceReady && board
                       ? "No example players. Only real wallet profiles."
                       : "Local play continues. No local scores are presented as global rankings."}
                   </span>

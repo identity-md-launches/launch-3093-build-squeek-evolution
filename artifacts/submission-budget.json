@@ -1,17 +1,18 @@
 {
   "maximumBytes": 8388608,
-  "addedBytes": 2607609,
-  "files": 73,
+  "addedBytes": 2714288,
+  "files": 78,
   "pathBudgetsBytes": {
     "dist": 4194304,
     "artifacts": 524288,
     "sourceAndConfiguration": 3670016
   },
+  "requiredRevisionResponsesSubBudgetBytes": 16384,
   "actualPathBytes": {
-    "dist": 1503035,
-    "artifacts": 424230,
-    "sourceAndConfiguration": 680344
+    "dist": 1504343,
+    "artifacts": 500888,
+    "sourceAndConfiguration": 709057
   },
   "generatedDependencyAndCacheBytesSubmitted": 0,
-  "note": "dist/, source, lockfile, runtime assets, screenshots and reports are included; no submodule, dependency archive, database or cache is submitted."
+  "note": "Complete source, lockfile, required runtime assets, rebuilt dist and revision evidence included. The revision response is explicitly included. No submodule, dependency archive, database or cache is submitted."
 }

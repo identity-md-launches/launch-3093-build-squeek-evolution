@@ -1,27 +1,27 @@
 {
-  "checkedAt": "2026-11-07T05:27:48.433Z",
+  "checkedAt": "2026-11-07T06:21:14.437Z",
   "chainId": 11155111,
   "core": "0xfd6c166d4b8e2962e65746a13e5a0797cd4de0c4",
   "release": "core-sepolia-20261103",
   "rpcSource": "https://ethereum-sepolia-rpc.publicnode.com",
   "https://api.squeekchain.com/v1/status": {
     "ok": true,
-    "generatedAt": "2026-11-07T05:27:48.347Z"
+    "generatedAt": "2026-11-07T06:21:14.554Z"
   },
   "https://api.squeekchain.com/v1/measurement/stats?range=7d": {
     "ok": true,
-    "generatedAt": "2026-11-07T05:27:21.880Z"
+    "generatedAt": "2026-11-07T06:21:14.683Z"
   },
   "https://api.squeekchain.com/v1/settlements": {
     "ok": true,
-    "generatedAt": "2026-11-07T05:27:43.777Z",
+    "generatedAt": "2026-11-07T06:21:15.116Z",
     "chain": {
       "target": "sepolia",
       "chainId": "11155111",
       "confirmations": "12",
       "deploymentBlock": "12057556",
-      "indexedThroughBlock": "12081588",
-      "safeThroughBlock": "12081577"
+      "indexedThroughBlock": "12081854",
+      "safeThroughBlock": "12081843"
     },
     "recentCount": 10
   },
@@ -32,8 +32,8 @@
       "chainId": "11155111",
       "confirmations": "12",
       "deploymentBlock": "12057556",
-      "indexedThroughBlock": "12081588",
-      "safeThroughBlock": "12081577"
+      "indexedThroughBlock": "12081853",
+      "safeThroughBlock": "12081842"
     },
     "identities": {
       "factory": "0xfb659c3580bed5426b855c76c34cfb8450511dbc",
@@ -48,21 +48,21 @@
   },
   "receiptVerification": {
     "ok": true,
-    "hash": "0xefd9301cef0daa4b28057a3fdae77417227d5c97e0751e264c20a5eb536b075a",
-    "blockHash": "0x7f012d652654cfbe4b83cc8416a20b445b3a4b219af8c7ddc989119e27bcb142",
-    "blockNumber": "12081553",
-    "timestamp": 1794028836,
-    "confirmations": "37",
-    "work": "570",
-    "blocks": "65",
+    "hash": "0x12f5c7d4c8c80b4b4165d335b09f7e72473c0e9428a83379796531ce88ea28bd",
+    "blockHash": "0x4f93feff8e68d0477fa89cd803292fd04d8f2002662175d4ded4b3e6bf700a3f",
+    "blockNumber": "12081802",
+    "timestamp": 1794031836,
+    "confirmations": "53",
+    "work": "64",
+    "blocks": "7",
     "rounds": [
       {
-        "id": "489",
-        "work": "570",
-        "dataHash": "0xb26eabafd24f6ef65c3966c740447693f394438c7bdd22ab76037811a2719dc2"
+        "id": "494",
+        "work": "64",
+        "dataHash": "0xad522b99eac7493f61290f7fea18ab4d6d562b70bae5fe25c6ff6f84c945b213"
       }
     ],
-    "through": "489",
-    "logIndex": 940
+    "through": "494",
+    "logIndex": 206
   }
 }

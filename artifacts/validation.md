@@ -1,5 +1,47 @@
 # Worker validation and consolidated design review
 
+## Revision validation — 7 November 2026
+
+**All five reopened findings were reproduced and fixed.** This revision preserves the accepted game, artwork, contract pins, wallet connectors and service architecture. It changes name wrapping, XP-achievement reconciliation, ranking-read error states, sign-in save selection and saved-proof retry behavior. The rebuilt static export remains in `dist/`.
+
+| Check on this revision | Actual result |
+| --- | --- |
+| Production build and TypeScript check | Passed; no compiler errors. Existing upstream bundler annotations / `use client` warnings remain nonfatal. |
+| Targeted production-client regressions | **13/13 passed**; `revision-tests.json`. |
+| Game/service tests | **25/25 passed**; `unit-service-tests.json`. |
+| Production HTTP smoke checks | **5/5 passed**; `server-smoke.json`. |
+| Existing browser suite | **20 Chromium checks passed**; the WebKit launch check is blocked by missing system libraries. `browser-tests.json` retains that failed launch rather than reporting it as passed. |
+| Final taste@1 probe | **16/16 passed**, offline at 320, 390 and 1440; `design-probe.json`. |
+| Official API / live receipt read | All four official API reads succeeded; real Sepolia round 494, 64 work units, 7 completed blocks, 53 confirmations at the recorded read. `live-integration.json`. |
+
+The pre-fix production export reproduced all reported failures. `revision-baseline.json` records the original measurements and intentionally failing regression assertions: the 24-letter name produced scroll widths **547 / 553 / 1714** at **320 / 390 / 1440**; the real mission sequence reached **107 XP** without `first-steps`; play and qualifying-save loading also missed that badge; a healthy service followed by a 503 ranking read showed a false empty result; signed reconnect changed **XP 5 / pet 1** to **XP 0 / pet 0**; successful verification of the real 604-work receipt and manual source refresh both left energy unavailable. Baseline failures are evidence of reproduction, not passing checks.
+
+| Finding / final source | Correction and recheck |
+| --- | --- |
+| High, layout — `src/style.css:451`, `src/style.css:690` | Name headings wrap complete values in shrinkable columns; avatar and utilities cannot shrink. Follow-through testing reproduced the same name escaping mission/world text and return/help controls, which now wrap too. Final `documentElement.scrollWidth` is **320 / 390 / 1440** at those widths, across **all six sections** with 24 W characters. Avatar widths remain **40 / 40 / 48px**. Headings grow vertically. |
+| Medium, achievements — `src/game.ts:62` | One idempotent XP check covers care, mission collection, completed play and loaded care snapshots. Actual care/mission UI sequence unlocks at 107 XP; play unlocks at exactly 100, stays locked below 100, and never duplicates the badge. Loading an older 107-XP save repairs it. |
+| Medium, ranking state — `src/App.tsx:209`, `src/App.tsx:1678` | Ranking read errors are independent of service health. After an injected 503, the UI shows the returned error, Shared rankings unavailable and Retry rankings. It shows neither an empty-player claim nor a cached personal rank. Retrying a successful empty response restores the genuine empty state. |
+| Medium, local persistence — `src/App.tsx:550`, `src/game.ts:411` | A validated existing wallet-local save wins on sign-in; a new device restores cloud care. The returned server profile/revision remains current for explicit saves. Signed disconnect/reconnect and reload/re-sign preserve XP 5/pet 1. A second device can save a newer cloud snapshot without replacing that local care on the next sign-in. Saving the chosen local snapshot with the current revision and explicitly loading cloud care both pass. |
+| Medium, verification recovery — `src/App.tsx:343`, `src/App.tsx:375` | Retry saved proofs, Refresh sources and successful manual verification when reconciliation is incomplete all rerun the full saved-proof check. Each route recovers the real single receipt to **60 energy / Baby** without reload. With two real saved receipts, one still-failing proof keeps the total **Unavailable**; after restoring it, verifying the already-checked receipt retries the full set and restores **99 energy**, without duplicate rewards. |
+
+`node scripts/run.mjs revision` runs the new regressions after building. The worker used `PLAYWRIGHT_BROWSERS_PATH=test/scratch/browsers`, `NODE_USE_ENV_PROXY=1` and `SQUEEK_TEST_NETWORK_BRIDGE=1`. The bridge passes real public upstream API/RPC responses unchanged. Only RPC outages / a leaderboard 503 are injected; the historical guest date is explicitly test setup. Service tests use isolated SQLite and real signatures from generated in-memory accounts with an injected registration frontier. No fabricated chain work, test profiles, scores or keys enter the export. The existing API-outage test was repaired to reload after installing its failure route: hash navigation alone does not refetch sources while the test clock is paused.
+
+### Six-domain review of the revision
+
+| Domain | Coverage / result |
+| --- | --- |
+| Accessibility | Checked native button names, disabled checking states, status announcements, keyboard Escape/focus return through the existing browser suite and desktop long-name help flow. Complete names remain readable. Native zoom, assistive technology and physical devices remain unperformed. |
+| Layout | Measured all six sections with the longest supported name at 320/390/1440; existing ordinary-content checks also cover 768. Inspected actual long-name phone and desktop screenshots. No page-wide overflow or heading/control overlap was observed after fixes. |
+| Writing | Checked error/loading/empty/retry distinctions. Failed ranking reads state what is unavailable; sign-in says local care was kept and identifies Settings for cloud loading. |
+| Typography | Checked complete name wrapping and preserved font sizes; no clipping, ellipsis or shrink-to-fit. The existing six-size DM Sans scale is unchanged. |
+| Colors | No palette changes. The final probe passed its measured solid foreground/background contrast checks. No new exhaustive alpha/image contrast claim is made. |
+| UI | Inspected the failed-ranking render and retry transition; exercised saved-proof pending/unavailable/confirmed states, partial failure and recovery. New controls reuse existing compact buttons and icons. Existing reduced-motion checks passed. |
+
+The final 390 screenshot shows the actual pet and all five care actions in the first viewport. `screenshots/revision-long-name-390.jpg` records this with the longest accepted name. Full long-name screenshots at 320, 390 and 1440 and the ranking failure screenshot were inspected from disposable `test/scratch/revision/`; those full-size scratch captures are not submitted. The pinned probe's 390 first-screen and desktop captures were also inspected.
+
+The supplied browser MCP could not launch its configured Chrome (`/opt/google/chrome/chrome` missing). Actual rendering and interactions used installed Playwright Chromium 141 instead. WebKit's downloaded runtime could not launch because OS libraries are absent. Real MetaMask/passkey ceremonies, physical wallet handoffs, screen readers and native zoom remain unperformed. Public URL assignment and a public shared backend remain the previously disclosed deployment limits. **Complete for the five-finding revision scope**, with the broader delivery limits below retained. All finding verdicts are in root `.imd-responses.json`, explicitly included with a 16 KiB path budget inside the existing source/docs allocation.
+
+
 This record describes checks actually performed by the worker. The verifier's path/byte checks do not independently certify these behaviors. The delivered source and export are a useful implementation; **the requested fully public shared deployment is incomplete** because no public backend is hosted in this run. The frontend's publication URL is assigned after upload, not fabricated here.
 
 | Area | Result |

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-07T05:48:33.881Z",
+  "checkedAt": "2026-11-07T06:19:31.973Z",
   "note": "Isolated tests use generated in-memory signing keys and explicitly injected settlement fixtures. No test accounts or scores enter the product.",
   "results": [
     {

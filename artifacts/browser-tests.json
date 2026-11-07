@@ -1,9 +1,8 @@
 {
-  "checkedAt": "2026-11-07T05:50:58.495Z",
-  "networkBridge": false,
+  "checkedAt": "2026-11-07T06:23:53.183Z",
+  "networkBridge": true,
   "note": "Production export at /preview/. Wallet tests use an explicitly named test provider and generated in-memory accounts; no real MetaMask approval or Coinbase passkey ceremony was attempted. Shared-service tests use isolated SQLite and a fixed test registration frontier, not seeded production profiles.",
   "remoteFailures": [
-    "api.squeekchain.com: net::ERR_EMPTY_RESPONSE",
     "cca-lite.coinbase.com: net::ERR_ABORTED",
     "cca-lite.coinbase.com: net::ERR_EMPTY_RESPONSE",
     "api.squeekchain.com: net::ERR_FAILED"
